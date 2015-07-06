@@ -1,13 +1,14 @@
 library(shiny)
 
-shinyUI(fluidPage(
+shinyUI(fixedPage(
   titlePanel("Northern Rangelands Trust Overview"),
-  fluidRow(
-    column(3,
+
+  fixedRow(
+    column(4,
            selectInput("select", label = h3("NRT Clusters"), 
                        choices = list("NRT North East" = 1, "NRT Central" = 2,
-                                      "NRT Coast" = 3), multiple = TRUE, selectize = TRUE)),
-    column(3,
+                                      "NRT Coast" = 3), multiple = TRUE, selectize = TRUE),
+    fixedRow(column(4,
            selectInput("select", label = h3("County"), 
                        choices = list("Baringo" = 1,
                                       "Garissa" = 2,
@@ -17,7 +18,7 @@ shinyUI(fluidPage(
                                       "Meru" = 6,
                                       "Samburu" = 7), multiple = TRUE, selectize = TRUE),
 
-    column(3, selectInput("select", label = h3("Community Conservancy"), 
+    fixedRow(column(8, selectInput("select", label = h3("Community Conservancy"), 
                 choices = list("Awer"=1,
                                              "Biliqo-Bulesa"=2,
                                              "Hanshak-Nyongoro"=3, 
@@ -44,7 +45,10 @@ shinyUI(fluidPage(
                                              "Sera" = 24,
                                              "Shurr" =25,
                                              "Songa" =26,
-                                             "West Gate"=27), multiple = TRUE, selectize = TRUE)
+                                             "West Gate"=27), multiple = TRUE, selectize = TRUE))
+    )))
+    )
+    ))
+)
 
-    )    
-))))
+
